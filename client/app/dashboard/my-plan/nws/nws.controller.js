@@ -57,7 +57,7 @@ angular.module('rockridge')
       };
     },
     templateUrl: './app/dashboard/my-plan/nws/nwsGroupTemplate.html'
-  }
+  };
 })
 
 .directive('nwsadditem', function() {
@@ -90,5 +90,5 @@ angular.module('rockridge')
       };
     },
     templateUrl: './app/dashboard/my-plan/nws/addItemTemplate.html'
-  }
+  };
 });
