@@ -3,7 +3,23 @@
 'use strict';
 
 angular.module('rockridge')
-.controller('OverviewViewCtrl', function($scope) {
+.controller('OverviewViewCtrl', function($scope, Nexmo) {
+
+
+  $scope.linkBankAccount = function(){
+    $('#cap-one-modal').modal('show');
+    //TODO:
+  };
+
+  $scope.textPlan = function(){
+    var number = $('#phone-number').val();
+    number = parseInt('1'+number);
+    var body = {
+      to: number,
+      message: 'rockridge.io - Click to open your plan: https://rockridge.io/dashboard'
+    }
+    Nexmo.text(body);
+  };
 
   // Calculates and return the total of a given group.
   var sumGroup = function(group) {

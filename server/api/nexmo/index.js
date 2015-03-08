@@ -6,6 +6,6 @@ var auth = require('../../auth/auth.service');
 
 var router = express.Router();
 
-router.post('/text', auth.isAuthenticated(), controller.sendText);
+router.post('/me/text', auth.isAuthenticated(), controller.sendText);
 
 module.exports = router;
