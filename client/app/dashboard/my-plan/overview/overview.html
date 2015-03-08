@@ -9,6 +9,18 @@
     <a class="ui primary button" href="/plan-builder">Go To Plan-Builder Now</a>
   </div>
 
+  <div style='text-align: center; margin: 8px;'>
+    <div class='ui red button' ng-click='linkBankAccount()'>
+      link bank account
+    </div>
+    <div class='ui green button' ng-click='textPlan()'>
+      text me my plan
+    </div>
+    <div class='ui input'>
+      <input id='phone-number' type="text" placeholder="enter # (digits only)">
+    </div>
+  </div>
+
   <!-- Shown overview of plan if the user has completed plan-builder -->
   <div class="ui two column centered grid" ng-show="!!user.builderComplete">
 
@@ -30,4 +42,36 @@
 
   </div> <!-- End overview content -->
 
+</div>
+
+<!-- signup modal -->
+<div class="ui small modal" id='cap-one-modal'>
+  <i class="close icon"></i>
+  <div class="ui two column centered grid hidden basic segment">
+    <form class="ui form" ng-submit="capitalOne()" novalidate>
+
+      <div class="required field">
+        <label>captialOne username</label>
+        <div class="ui icon input">
+          <input type="text" placeholder="capitalOne username" ng-model="capitalOne.username" required>
+          <i class="user icon"></i>
+        </div>
+      </div>
+
+      <div class="required field">
+        <label>capitalOne password</label>
+        <div class="ui icon input">
+          <input type="password" placeholder='capitalOne password' ng-model="capitalOne.password" required>
+          <i class="lock icon"></i>
+        </div>
+      </div>
+
+      <div class='margin-top-md'>
+        <button class="ui primary button" ng-click="savePlan" type="submit">
+          login
+        </button>
+      </div>
+
+    </form>
+  </div>
 </div>

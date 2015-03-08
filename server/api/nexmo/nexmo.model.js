@@ -5,16 +5,16 @@ nexmo.initialize(config.nexmo.id, config.nexmo.secret,'http', false);
 
 var Nexmo = function() {};
 
-Nexmo.prototype.sendText = function(from, to, text, cb) {
-  nexmo.sendTextMessage(from, to, text, {}, function(err, res){
+//Note: from and to must have a leading 1 for country code
+Nexmo.prototype.sendText = function(to, text, cb) {
+  nexmo.sendTextMessage(12069396508, to, text, {}, function(err, res){
     if(err) throw err;
     cb(res);
   });
 };
 
-//TODO: ask someone why this won't work
 // var test = new Nexmo();
-// test.sendText('test', function(res){
+// test.sendText(15553337777, 12228883333, 'it worked!', function(res){
 //   console.log('res', res);
 // });
 
